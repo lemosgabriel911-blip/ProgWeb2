@@ -49,19 +49,27 @@ console.log(compareB(8, 'huit'));
 function Pair(number) {
     const max = 20;
     const min = 0;
-
-    if (number > max || number < min) {
-        return "Ce chiffre est hors limite"
-    }
-    else if (number % 2 == 0) {
-        return "Ce chiffre est paire"
-    } else {
-        return "Ce chiffre est impaire"
+    for (let x = 0; x <= number; x = x + 2) {
+        console.log(x);
     }
 }
 
-    console.log(Pair(5));
+console.log(Pair(18));
 
 // Nombres pairs et mulitples de 7 entre 0 et n 
+
+// Nombres pairs entre 0 et n 
+function Pair(number) {
+    const max = 20;
+    const min = 0;
+    for (let x = 0; x <= number; x = x + 2 || x % 7 == 0) {
+        console.log(x);
+        if(number > max || number < min){
+            return "Ce chiffre est hors limite"
+        }
+    }
+}
+
+console.log(Pair(24));
 // Les nombres entiers pairs et multiples de 3, ainsi que les nombres entiers multiple de 7 compris entre 0 et n.
 // Les nombres entiers pairs et multiples de 3, mais non multiples de 7 compris entre 0 et n.
