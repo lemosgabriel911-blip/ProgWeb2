@@ -124,12 +124,12 @@ console.log(PairAnd3No7(20));
 //EXERCICE 5 Pile ou face
 
 //Le nombre de piles obtenus sur un lancé de n pièces de monnaies simulées par l'utilisation du générateur de nombre aléatoire.
-function nPiles(number){
+function nPiles(number) {
 
     let attempt = 0;
 
-    for (let x = 0; x < number; x++){
-        if(Math.random() >= 0.5){
+    for (let x = 0; x < number; x++) {
+        if (Math.random() >= 0.5) {
             attempt++;
         }
     }
@@ -140,13 +140,13 @@ console.log(nPiles(10));
 
 //Le nombre de piles et de faces obtenus sur un lancé de n pièces de monnaies simulées par l'utilisation du générateur de nombre aléatoire.
 
-function nPilesOuFace(number){
+function nPilesOuFace(number) {
 
     let pile = 0;
     let face = 0;
 
-    for (let x = 0; x < number; x++){
-        if(Math.random() >= 0.5){
+    for (let x = 0; x < number; x++) {
+        if (Math.random() >= 0.5) {
             pile++;
         } else {
             face++;
@@ -162,4 +162,19 @@ console.log(result.face);
 
 //EXERCICE 6 Tester pour des nombres premiers
 
+function nPremiers(number) {
 
+    if (number < 2){
+            return "Pas un nombre premier"
+        } 
+
+    for (let compteur = 2; Math.sqrt(number) >= compteur; compteur++) {
+
+        if(number % compteur == 0) {
+            return "Pas un nombre premier";
+        }
+    }
+    return "Nombre premier";
+}
+
+console.log(nPremiers(87178291199))
