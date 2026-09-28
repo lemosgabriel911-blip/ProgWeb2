@@ -1,4 +1,4 @@
-// Exercice 1 TROUVER LE MAX
+// EXERCICE 1 TROUVER LE MAX
 function getMax(a, b, c) {
     return Math.max(a, b, c);
 }
@@ -7,7 +7,7 @@ const max = getMax(1, 5, 8);
 
 console.log(max);
 
-// Exercice 2 NOMBRE ALEATOIRE
+// EXERCICE 2 NOMBRE ALEATOIRE
 
 function getRandomInt(min, max) {
 
@@ -20,7 +20,7 @@ for (let i = 0; i < 5; i++) {
     console.log(getRandomInt(1, 10));
 }
 
-//Exercice 3 COMPARAISON
+//EXERCICE 3 COMPARAISON
 
 function compareA(a, b) {
     if (a == b) {
@@ -43,33 +43,84 @@ function compareB(c, d) {
 console.log(compareB(8, '8'));
 console.log(compareB(8, 'huit'));
 
-//Exercice 4 AFFICHAGE SELON CONDITION
+//EXERCICE 4 AFFICHAGE SELON CONDITION
 
 // Nombres pairs entre 0 et n 
 function Pair(number) {
     const max = 20;
     const min = 0;
+
+    if (number < min || number > max) {
+        return "Ce chiffre est hors limite"
+    }
+
     for (let x = 0; x <= number; x = x + 2) {
         console.log(x);
     }
+    return "Terminé"
 }
 
 console.log(Pair(18));
 
 // Nombres pairs et mulitples de 7 entre 0 et n 
 
-// Nombres pairs entre 0 et n 
-function Pair(number) {
+function PairAnd7(number) {
     const max = 20;
     const min = 0;
-    for (let x = 0; x <= number; x = x + 2 || x % 7 == 0) {
-        console.log(x);
-        if(number > max || number < min){
-            return "Ce chiffre est hors limite"
+
+    if (number < min || number > max) {
+        return "Ce chiffre est hors limite"
+    }
+
+    for (let x = 0; x <= number; x++) {
+        if (x % 2 === 0 && x % 7 === 0) {
+            console.log(x);
         }
     }
+    return "Terminé"
 }
 
-console.log(Pair(24));
+
+
+console.log(PairAnd7(19));
 // Les nombres entiers pairs et multiples de 3, ainsi que les nombres entiers multiple de 7 compris entre 0 et n.
+
+function PairAnd3And7(number) {
+    const max = 20;
+    const min = 0;
+
+    if (number < min || number > max) {
+        return "Ce chiffre est hors limite"
+    }
+
+    for (let x = 0; x <= number; x++) {
+        if ((x % 2 === 0 && x % 3 === 0) || x % 7 === 0) {
+            console.log(x);
+        }
+    }
+    return "Terminé"
+}
+console.log(PairAnd3And7(10));
+
 // Les nombres entiers pairs et multiples de 3, mais non multiples de 7 compris entre 0 et n.
+
+function PairAnd3No7(number) {
+    const max = 20;
+    const min = 0;
+
+    if (number < min || number > max) {
+        return "Ce chiffre est hors limite"
+    }
+
+    for (let x = 0; x <= number; x++) {
+        if ((x % 2 === 0 && x % 3 === 0) && x % 7 !== 0) {
+            console.log(x);
+        }
+    }
+    return "Terminé"
+}
+console.log(PairAnd3No7(20));
+
+//EXERCICE 5 Pile ou face
+
+
