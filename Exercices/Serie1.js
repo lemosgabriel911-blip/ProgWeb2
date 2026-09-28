@@ -24,9 +24,9 @@ for (let i = 0; i < 5; i++) {
 
 function compareA(a, b) {
     if (a == b) {
-        return true
+        return true;
     } else {
-        return false
+        return false;
     }
 }
 console.log(compareA(4, '4'));
@@ -35,9 +35,9 @@ console.log(compareA(4, 'quatre'));
 
 function compareB(c, d) {
     if (c === d) {
-        return true
+        return true;
     } else {
-        return false
+        return false;
     }
 }
 console.log(compareB(8, '8'));
@@ -51,13 +51,13 @@ function Pair(number) {
     const min = 0;
 
     if (number < min || number > max) {
-        return "Ce chiffre est hors limite"
+        return "Ce chiffre est hors limite";
     }
 
     for (let x = 0; x <= number; x = x + 2) {
         console.log(x);
     }
-    return "Terminé"
+    return "Terminé";
 }
 
 console.log(Pair(18));
@@ -69,7 +69,7 @@ function PairAnd7(number) {
     const min = 0;
 
     if (number < min || number > max) {
-        return "Ce chiffre est hors limite"
+        return "Ce chiffre est hors limite";
     }
 
     for (let x = 0; x <= number; x++) {
@@ -77,7 +77,7 @@ function PairAnd7(number) {
             console.log(x);
         }
     }
-    return "Terminé"
+    return "Terminé";
 }
 
 
@@ -90,7 +90,7 @@ function PairAnd3And7(number) {
     const min = 0;
 
     if (number < min || number > max) {
-        return "Ce chiffre est hors limite"
+        return "Ce chiffre est hors limite";
     }
 
     for (let x = 0; x <= number; x++) {
@@ -98,7 +98,7 @@ function PairAnd3And7(number) {
             console.log(x);
         }
     }
-    return "Terminé"
+    return "Terminé";
 }
 console.log(PairAnd3And7(10));
 
@@ -122,5 +122,44 @@ function PairAnd3No7(number) {
 console.log(PairAnd3No7(20));
 
 //EXERCICE 5 Pile ou face
+
+//Le nombre de piles obtenus sur un lancé de n pièces de monnaies simulées par l'utilisation du générateur de nombre aléatoire.
+function nPiles(number){
+
+    let attempt = 0;
+
+    for (let x = 0; x < number; x++){
+        if(Math.random() >= 0.5){
+            attempt++;
+        }
+    }
+    return attempt
+}
+
+console.log(nPiles(10));
+
+//Le nombre de piles et de faces obtenus sur un lancé de n pièces de monnaies simulées par l'utilisation du générateur de nombre aléatoire.
+
+function nPilesOuFace(number){
+
+    let pile = 0;
+    let face = 0;
+
+    for (let x = 0; x < number; x++){
+        if(Math.random() >= 0.5){
+            pile++;
+        } else {
+            face++;
+        }
+    }
+    return { pile: pile, face: face }; //Les accolades créent un objet ou l'on peut stocker des valeurs que l'on nomme "nom : valeur"
+}
+
+const result = nPilesOuFace(10);
+console.log(result);
+console.log(result.pile); //On peut ainsi les réutiliser séparément en les assignant à une constante résultat 
+console.log(result.face);
+
+//EXERCICE 6 Tester pour des nombres premiers
 
 
