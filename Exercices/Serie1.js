@@ -222,10 +222,30 @@ function cl(...args){ // ... rest operator => mettre dans un tableau tous les pa
     /*
     function cl(...args){ // ... rest operator => mettre dans un tableau tous les paramètres
     for (let i=0; i<args.length; i++){
-        console.log(v);
+        const v = args[i];
+        console.log(v)
     }
     */
 }
 cl(1);
 cl(1, 2 ,"a", [3.1, 4, 159]);
+
+//EXERCICE 8 carré et racine
+function double(n){
+    return n * 2;
+}
+
+function square(n){
+    return n ** 2;
+}
+
+console.log(double(4));
+console.log(square(4));
+
+function transform(n, fct){
+    return fct(n);
+}
+
+console.log(transform(5, double));
+console.log(double(5));
 
