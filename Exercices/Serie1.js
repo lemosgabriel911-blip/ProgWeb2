@@ -155,22 +155,56 @@ function nPilesOuFace(number) {
     return { pile: pile, face: face }; //Les accolades créent un objet ou l'on peut stocker des valeurs que l'on nomme "nom : valeur"
 }
 
-const result = nPilesOuFace(10);
+const result = nPilesOuFace(20);
 console.log(result);
 console.log(result.pile); //On peut ainsi les réutiliser séparément en les assignant à une constante résultat 
 console.log(result.face);
+
+//EXERCICE 5 Solution Prof
+
+// function rollNTimes(min, max, times) {
+//     const rolls = [];
+//     for (let i = 0; i < times; i++) {
+//         rolls.push(getRandomInt(min, max));
+//     }
+//     return rolls;
+// }
+
+// function count(n, values) {
+//     let count = 0;
+//     for (const v of values) { //const gère l'itération et values va parcourir les valeurs d'un tableau et les stocker dans v
+//         if (v === n) {
+//             count++;
+//         }
+//     }
+// }
+
+// const TAIL = 0;
+// const FACE = 1;
+// function getNbTailsAndFaces(times) {
+//     const rolls = rollNTimes(TAIL, FACE, times);
+//     const nbTails = count(TAIL, rolls);
+//     const nbFaces = rolls.length - nbTails;
+//     return {
+//         tails: nbTails,
+//         face: nbFaces,
+//     }
+// }
+
+// console.log(getNbTailsAndFaces(10000))
+
 
 //EXERCICE 6 Tester pour des nombres premiers
 
 function nPremiers(number) {
 
-    if (number < 2){
-            return "Pas un nombre premier"
-        } 
+    if (number < 2) {
+        return "Pas un nombre premier"
+    }
 
     for (let compteur = 2; Math.sqrt(number) >= compteur; compteur++) {
 
-        if(number % compteur == 0) {
+        if (number % compteur == 0) {
             return "Pas un nombre premier";
         }
     }
@@ -178,3 +212,20 @@ function nPremiers(number) {
 }
 
 console.log(nPremiers(87178291199))
+
+//EXERCICE 7 CL
+
+function cl(...args){ // ... rest operator => mettre dans un tableau tous les paramètres
+    for (const v of args){
+        console.log(v);
+    }
+    /*
+    function cl(...args){ // ... rest operator => mettre dans un tableau tous les paramètres
+    for (let i=0; i<args.length; i++){
+        console.log(v);
+    }
+    */
+}
+cl(1);
+cl(1, 2 ,"a", [3.1, 4, 159]);
+
