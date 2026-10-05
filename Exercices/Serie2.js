@@ -55,3 +55,20 @@ console.log(strings.reduce((accumulator, currentValue) => accumulator + currentV
 console.log(strings.toSorted((mot1, mot2) => { // 7 Retourner le premier mot selon l'ordre alphabétique sans modifier le tableau initial
     return mot1.localeCompare(mot2);
 })[0]);
+
+const concatene = strings.reduce((accumulator, currentValue) => accumulator + currentValue); // 8 Concaténer, convertir en minuscules, puis vérifier si c'est un palindrome
+const minuscule = concatene.toLowerCase();
+const inverse = minuscule.split("").reverse().join("");
+console.log(minuscule === inverse);
+
+//EXERCICE 3 Tableau d'objets
+
+const JACK = 11;
+const QUEEN = 12;
+const KING = 13;
+const ACE = 14;
+
+const RANKS = [2, 3, 4, 5, 6, 7, 8, 9, 10, JACK, QUEEN, KING, ACE];
+const SUITS = ['hearts', 'spades', 'clubs', 'diamonds'];
+
+console.log(RANKS.map(rank => SUITS.map(suit => ))); // A finir
