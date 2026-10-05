@@ -40,10 +40,18 @@ console.log(newStrings);
 const newStrings2 = [...strings, "Ipsum"]; // 4 Ajouter Ipsum à la fin (exemple en gardant le tableau de référence avec object.freeze)
 console.log(newStrings2);
 
-const middleIndex = Math.floor(strings.length / 2); // 5 A finir 
+const middleIndex = Math.floor(strings.length / 2); // 5 Retourner le tableau avec le mot "Radar" qui remplace le mot du milieu
 const result3 = strings.map((word, index) => {
     if (index === middleIndex) {
-        return (...strings, "Radar" ...strings)
+        return ("Radar");
+    } else {
+        return (word);
     }
 });
 console.log(result3);
+
+console.log(strings.reduce((accumulator, currentValue) => accumulator + currentValue)); // 6 Concaténation de tous les mots
+
+console.log(strings.toSorted((mot1, mot2) => { // 7 Retourner le premier mot selon l'ordre alphabétique sans modifier le tableau initial
+    return mot1.localeCompare(mot2);
+})[0]);
