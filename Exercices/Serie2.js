@@ -20,8 +20,8 @@ console.log(numbers.some(numbers => numbers % 9 === 0)); // 8 Indique si le tabl
 console.log(numbers.every(numbers => numbers > 0)); // 9 Indique si tous les chiffres sont positifs
 
 const even = numbers.filter(numbers => numbers % 2 === 0); // 10 Afficher le tableau de la façon suivante : paire, impaires. Sans changer l'ordre relatif
-const uneven = numbers.filter(numbers => numbers % 2 !== 0);
-const result1 = [...even, ...uneven];
+const odd = numbers.filter(numbers => numbers % 2 !== 0);
+const result1 = [...even, ...odd];
 console.log(result1);
 
 //EXERCICE 2 Tableau de chaîne de caractères
@@ -51,6 +51,7 @@ const result3 = strings.map((word, index) => {
 console.log(result3);
 
 console.log(strings.reduce((accumulator, currentValue) => accumulator + currentValue)); // 6 Concaténation de tous les mots
+// console.log(strings.join('')); Solution Exercice 6 avec .join()
 
 console.log(strings.toSorted((mot1, mot2) => { // 7 Retourner le premier mot selon l'ordre alphabétique sans modifier le tableau initial
     return mot1.localeCompare(mot2);
@@ -71,4 +72,34 @@ const ACE = 14;
 const RANKS = [2, 3, 4, 5, 6, 7, 8, 9, 10, JACK, QUEEN, KING, ACE];
 const SUITS = ['hearts', 'spades', 'clubs', 'diamonds'];
 
-console.log(RANKS.map(rank => SUITS.map(suit => ))); // A finir
+console.log(deck = RANKS.reduce( // 1 Proposition de structure pour visualiser les carte 
+    (accumulator, rank) =>
+        accumulator.concat(
+            SUITS.map(suit => ({ rank, suit }))
+        ),
+    []
+));
+
+function buildBaseDeck() {
+    const deck = RANKS.reduce( // 2 Construit un paquet et le renvoie (résultat identique à 1)
+        (accumulator, rank) =>
+            accumulator.concat(
+                SUITS.map(suit => ({ rank, suit }))
+            ),
+        []
+    );
+    return deck;
+}
+
+const newDeck = buildBaseDeck();
+console.log(newDeck);
+
+function shuffleInPlace(newDeck) { // 3 Mélange le paquet en fonction de l'algorithme Fisher-Yates. 
+    for (let i = newDeck.length - 1; i >= 1; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newDeck[i], newDeck[j]] = [newDeck[j], newDeck[i]];
+    }
+    return newDeck;
+}
+
+console.log(shuffleInPlace(newDeck));

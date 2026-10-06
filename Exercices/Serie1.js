@@ -249,3 +249,18 @@ function transform(n, fct){
 console.log(transform(5, double));
 console.log(double(5));
 
+// CORRECTIONS
+
+// Exercice 10
+
+function createGreeting(greeting){
+    return function (name){
+        // return greeting + '' + name;
+        return `${greeting} ${name}`;
+    }
+}
+
+const sayHello = createGreeting(`Hello`);
+const sayWelcome = createGreeting(`Welcome`)
+console.log(sayHello(`Nicolas`));
+console.log(sayWelcome(`Nicolas`));
