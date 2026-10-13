@@ -14,7 +14,15 @@ const aceSpade = deck.querySelector('#SPADE-ACE');
 
 aceSpadeButton.addEventListener('click', () => {
     clearSelection();
-    aceSpade.classList.add("selected");
+    aceSpade.classList.add('selected');
 });
 
-const heartsCards =  document.querySelector('#select-hearts');
+const heartsButton =  document.querySelector('#select-hearts');
+const allHearts = deck.querySelectorAll('.heart');
+
+heartsButton.addEventListener('click', () =>{
+    clearSelection();
+    allHearts.forEach((heart) => {
+        heart.classList.add('selected');
+    });
+});
