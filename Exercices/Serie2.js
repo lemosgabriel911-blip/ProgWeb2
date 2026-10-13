@@ -102,4 +102,23 @@ function shuffleInPlace(newDeck) { // 3 Mélange le paquet en fonction de l'algo
     return newDeck;
 }
 
-console.log(shuffleInPlace(newDeck));
+console.log(shuffleInPlace);
+
+function compareRank(card1, card2){ // 5 Comparaison de rangs numériques
+    if(card1.rank > card2.rank){
+        return +1;
+    }else if (card1.rank == card2.rank){
+        return 0;
+    }else{
+        return -10;
+    }
+}
+
+// function compareRank(card1, card2){ // Autre solution qui fonctionne pour les cartes mais pas avec des trop grands nombres ou avec 2 nombres négatifs par exemple
+//    return card1.rank - card2.rank;
+// }
+
+console.log(deck);
+console.log(shuffleInPlace);
+
+console.log(compareRank(deck[0], deck[1]) > 0 ? 'plus grand' : 'plus petit ou égal');
