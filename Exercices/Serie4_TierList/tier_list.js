@@ -29,15 +29,19 @@ delegateOn('#tiers', '[data-action="delete"]', 'click', (el, parent, evt) => {
 
 //Changement de tier
 const TIERS = ['S', 'A', 'B', 'C', 'D'];
-cardtier = el.closest('.tier')
-cardtier.dataset.tier
 
-delegateOn('#tiers', '[data-action="delete"]', 'click', (el, parent, evt) => {
-    console.log(el);
-    console.log(parent);
-    console.log(evt);
-    const card = el.closest('.item'); //Closest est l'inverse de querySelector(Cherche vers le bas), closest(Cherche vers le haut)
-    if (window.confirm("Veux-tu supprimer cette carte ?")){
-    card.remove(); 
+delegateOn('#tiers', '[data-action="up"]', 'click', (button) => {
+    const cardtier = button.closest('.tier');
+    const currentTier = cardtier.dataset.tier;
+    console.log(currentTier);
+    const currentTierIndex = TIERS.indexOf(currentTier);
+    if (currentTierIndex === 0){
+        return;
     }
-})
+    const destinationIndex = currentTierIndex - 1;
+    const destinationTier = TIERS[destinationIndex];
+    const destinationSection = getNode(`[data-tier = "${destinationTier}"]`);
+    const destinationItems = getNode('.items', destinationSection);
+    const card = button.closest('.item');
+    destinationItems.append(card);
+    })
