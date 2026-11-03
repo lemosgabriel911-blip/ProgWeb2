@@ -17,6 +17,27 @@ on('#add-item-form', 'submit', (form, event) => {
 })
 
 //Supprimer
-delegateOn('body', '[data-action="delete"]', 'click', () => {
-    console.log('click');
+delegateOn('#tiers', '[data-action="delete"]', 'click', (el, parent, evt) => {
+    console.log(el);
+    console.log(parent);
+    console.log(evt);
+    const card = el.closest('.item'); //Closest est l'inverse de querySelector(Cherche vers le bas), closest(Cherche vers le haut)
+    if (window.confirm("Veux-tu supprimer cette carte ?")){
+    card.remove(); 
+    }
+})
+
+//Changement de tier
+const TIERS = ['S', 'A', 'B', 'C', 'D'];
+cardtier = el.closest('.tier')
+cardtier.dataset.tier
+
+delegateOn('#tiers', '[data-action="delete"]', 'click', (el, parent, evt) => {
+    console.log(el);
+    console.log(parent);
+    console.log(evt);
+    const card = el.closest('.item'); //Closest est l'inverse de querySelector(Cherche vers le bas), closest(Cherche vers le haut)
+    if (window.confirm("Veux-tu supprimer cette carte ?")){
+    card.remove(); 
+    }
 })
