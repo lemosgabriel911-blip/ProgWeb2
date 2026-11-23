@@ -72,7 +72,7 @@ const ACE = 14;
 const RANKS = [2, 3, 4, 5, 6, 7, 8, 9, 10, JACK, QUEEN, KING, ACE];
 const SUITS = ['hearts', 'spades', 'clubs', 'diamonds'];
 
-console.log(deck = RANKS.reduce( // 1 Proposition de structure pour visualiser les carte 
+console.log(RANKS.reduce( // 1 Proposition de structure pour visualiser les carte 
     (accumulator, rank) =>
         accumulator.concat(
             SUITS.map(suit => ({ rank, suit }))
@@ -94,7 +94,7 @@ function buildBaseDeck() {
 const newDeck = buildBaseDeck();
 console.log(newDeck);
 
-function shuffleInPlace(newDeck) { // 3 Mélange le paquet en fonction de l'algorithme Fisher-Yates. 
+export function shuffleInPlace(newDeck) { // 3 Mélange le paquet en fonction de l'algorithme Fisher-Yates. 
     for (let i = newDeck.length - 1; i >= 1; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [newDeck[i], newDeck[j]] = [newDeck[j], newDeck[i]];
@@ -118,7 +118,7 @@ function compareRank(card1, card2){ // 5 Comparaison de rangs numériques
 //    return card1.rank - card2.rank;
 // }
 
-console.log(deck);
+console.log(newDeck);
 console.log(shuffleInPlace);
 
-console.log(compareRank(deck[0], deck[1]) > 0 ? 'plus grand' : 'plus petit ou égal');
+console.log(compareRank(newDeck[0], newDeck[1]) > 0 ? 'plus grand' : 'plus petit ou égal');
