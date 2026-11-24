@@ -122,3 +122,4 @@ console.log(newDeck);
 console.log(shuffleInPlace);
 
 console.log(compareRank(newDeck[0], newDeck[1]) > 0 ? 'plus grand' : 'plus petit ou égal');
+
